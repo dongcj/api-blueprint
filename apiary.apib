@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://http://192.168.10.242:9090/
+HOST: http://192.168.10.242:9090/
 
 
 # Monitor Stacks API in Rancher
@@ -18,9 +18,6 @@ http://192.168.10.201:9090/api/v1/query
 query=sum(increase(container_network_transmit_bytes_total{container_label_io_rancher_project_name="etcd"}[1h]))by+(name)
 &time=1519456995.842
 ```
-
-
-
 
 
 
