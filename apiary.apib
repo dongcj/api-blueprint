@@ -13,6 +13,7 @@ http://192.168.10.201:9090/api/v1/query
 ## replace etcd to your Rancher stack name
 ## replace "1h" to your time, eg: 1d、1m (must bigger than 1 minute)
 ## time is start time, unix time format
+## container_network_transmit_bytes_total
 
 query=sum(increase(container_network_transmit_bytes_total{container_label_io_rancher_project_name="etcd"}[1h]))by+(name)
 &time=1519456995.842
@@ -25,44 +26,26 @@ query=sum(increase(container_network_transmit_bytes_total{container_label_io_ran
 
 ## Metric Transmit [/api/v1/query]
 
+### Transmit Byte Total [POST]
+
++ Request  (application/json)
+
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "resultType": "vector",
+            "result": [
+              {
+                "metric": {},
+                "value": [
+                  1519456995.842,
+                  "279327.85586050694"
+                ]
+              }
+            ]
+          }
+        }
+
 ### Transmit Byte Total [GET]
-
-+ Response 200 (application/json)
-
-        {
-          "status": "success",
-          "data": {
-            "resultType": "vector",
-            "result": [
-              {
-                "metric": {},
-                "value": [
-                  1519456995.842,
-                  "279327.85586050694"
-                ]
-              }
-            ]
-          }
-        }
-
-
-## Metric Receive [/api/v1/query]
-### Receive Byte Total [GET]
-
-+ Response 200 (application/json)
-
-        {
-          "status": "success",
-          "data": {
-            "resultType": "vector",
-            "result": [
-              {
-                "metric": {},
-                "value": [
-                  1519456995.842,
-                  "279327.85586050694"
-                ]
-              }
-            ]
-          }
-        }
