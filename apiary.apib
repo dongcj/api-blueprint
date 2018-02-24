@@ -28,8 +28,13 @@ query=sum(increase(container_network_transmit_bytes_total{container_label_io_ran
 
 ### Transmit Byte Total [POST]
 
-+ Request  (application/json)
++ Request (application/json)
 
+        {
+            "query": "sum(increase(container_network_transmit_bytes_total{container_label_io_rancher_project_name="etcd"}[1h]))by+(name)",
+            "time": "1519456995.842"
+            ]
+        }
 + Response 200 (application/json)
 
         {
@@ -47,5 +52,3 @@ query=sum(increase(container_network_transmit_bytes_total{container_label_io_ran
             ]
           }
         }
-
-### Transmit Byte Total [GET]
